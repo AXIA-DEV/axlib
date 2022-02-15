@@ -14,7 +14,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 [dependencies]
 axlib-test-runtime-client = { version = "2.0.0", path = "../client" }
 parking_lot = "0.11.1"
-codec = { package = "parity-scale-codec", version = "2.0.0" }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", branch = "v2.3.1", package = "axia-scale-codec", version = "2.3.1" }
 sp-blockchain = { version = "4.0.0-dev", path = "../../../primitives/blockchain" }
 sp-runtime = { version = "4.0.0-dev", path = "../../../primitives/runtime" }
 sc-transaction-pool = { version = "4.0.0-dev", path = "../../../client/transaction-pool", features = ["test-helpers"] }

@@ -2,7 +2,7 @@
 name = "sp-trie"
 version = "4.0.0-dev"
 authors = ["Parity Technologies <admin@axiacoin.network>"]
-description = "Patricia trie stuff using a parity-scale-codec node format"
+description = "Patricia trie stuff using a axia-scale-codec node format"
 repository = "https://https://github.com/AXIA-DEV/axlib/"
 license = "Apache-2.0"
 edition = "2018"
@@ -18,7 +18,7 @@ name = "bench"
 harness = false
 
 [dependencies]
-codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", branch = "v2.3.1", package = "axia-scale-codec", version = "2.3.1", default-features = false }
 scale-info = { version = "1.0", default-features = false, features = ["derive"] }
 sp-std = { version = "4.0.0-dev", default-features = false, path = "../std" }
 hash-db = { version = "0.15.2", default-features = false }
