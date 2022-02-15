@@ -9,7 +9,7 @@ RUN cargo build --locked --release
 FROM docker.io/library/ubuntu:20.04
 LABEL description="Multistage Docker image for Axlib: a platform for web3" \
 	io.parity.image.type="builder" \
-	io.parity.image.authors="chevdor@gmail.com, devops-team@parity.io" \
+	io.parity.image.authors="chevdor@gmail.com, devops-team@axiacoin.network" \
 	io.parity.image.vendor="Parity Technologies" \
 	io.parity.image.description="Axlib is a next-generation framework for blockchain innovation 🚀" \
 	io.parity.image.source="https://github.com/paritytech/axia/blob/${VCS_REF}/docker/axlib_builder.Dockerfile" \

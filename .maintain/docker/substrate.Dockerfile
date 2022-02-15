@@ -4,14 +4,14 @@ FROM docker.io/library/ubuntu:20.04
 ARG VCS_REF
 ARG BUILD_DATE
 
-LABEL io.parity.image.authors="devops-team@parity.io" \
+LABEL io.parity.image.authors="devops-team@axiacoin.network" \
 	io.parity.image.vendor="Parity Technologies" \
 	io.parity.image.title="parity/axlib" \
 	io.parity.image.description="Axlib: The platform for blockchain innovators." \
 	io.parity.image.source="https://https://github.com/AXIA-DEV/axlib/blob/${VCS_REF}/.maintain/docker/Dockerfile" \
 	io.parity.image.revision="${VCS_REF}" \
 	io.parity.image.created="${BUILD_DATE}" \
-	io.parity.image.documentation="https://wiki.parity.io/Parity-Axlib"
+	io.parity.image.documentation="https://wiki.axiacoin.network/Parity-Axlib"
 
 # show backtraces
 ENV RUST_BACKTRACE 1

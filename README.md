@@ -1,4 +1,4 @@
-# Axlib &middot; [![GitHub license](https://img.shields.io/badge/license-GPL3%2FApache2-blue)](#LICENSE) [![GitLab Status](https://gitlab.parity.io/parity/axlib/badges/master/pipeline.svg)](https://gitlab.parity.io/parity/axlib/pipelines) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/CONTRIBUTING.adoc) [![Matrix](https://img.shields.io/matrix/axlib-technical:matrix.org)](https://matrix.to/#/#axlib-technical:matrix.org)
+# Axlib &middot; [![GitHub license](https://img.shields.io/badge/license-GPL3%2FApache2-blue)](#LICENSE) [![GitLab Status](https://gitlab.axiacoin.network/parity/axlib/badges/master/pipeline.svg)](https://gitlab.axiacoin.network/parity/axlib/pipelines) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/CONTRIBUTING.adoc) [![Matrix](https://img.shields.io/matrix/axlib-technical:matrix.org)](https://matrix.to/#/#axlib-technical:matrix.org)
 
 <p align="center">
   <img src="/docs/media/sub.gif">

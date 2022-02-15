@@ -42,7 +42,7 @@ variables:                         &default-vars
   # FIXME set to release
   CARGO_UNLEASH_INSTALL_PARAMS:    "--version 1.0.0-alpha.12"
   CARGO_UNLEASH_PKG_DEF:           "--skip node node-* pallet-template pallet-example pallet-example-* subkey chain-spec-builder"
-  VAULT_SERVER_URL:                "https://vault.parity-mgmt-vault.parity.io"
+  VAULT_SERVER_URL:                "https://vault.parity-mgmt-vault.axiacoin.network"
   VAULT_AUTH_PATH:                 "gitlab-parity-io-jwt"
   VAULT_AUTH_ROLE:                 "cicd_gitlab_parity_${CI_PROJECT_NAME}"
   SIMNET_FEATURES_PATH:            "simnet_tests/tests"
@@ -165,7 +165,7 @@ default:
       git fetch origin +master:master;
       git fetch origin +$CI_COMMIT_REF_NAME:$CI_COMMIT_REF_NAME;
       git checkout master;
-      git config user.email "ci@gitlab.parity.io";
+      git config user.email "ci@gitlab.axiacoin.network";
       git merge $CI_COMMIT_REF_NAME --verbose --no-edit;
     fi
 
@@ -262,7 +262,7 @@ check-runtime:
     - if: $CI_COMMIT_REF_NAME =~ /^[0-9]+$/                         # PRs
   variables:
     <<:                            *default-vars
-    GITLAB_API:                    "https://gitlab.parity.io/api/v4"
+    GITLAB_API:                    "https://gitlab.axiacoin.network/api/v4"
     GITHUB_API_PROJECT:            "parity%2Finfrastructure%2Fgithub-api"
   script:
     - ./.maintain/gitlab/check_runtime.sh
@@ -755,7 +755,7 @@ publish-s3-release:
   image:                           paritytech/awscli:latest
   variables:
     GIT_STRATEGY:                  none
-    BUCKET:                        "releases.parity.io"
+    BUCKET:                        "releases.axiacoin.network"
     PREFIX:                        "axlib/${ARCH}-${DOCKER_OS}"
   script:
     - aws s3 sync ./artifacts/ s3://${BUCKET}/${PREFIX}/$(cat ./artifacts/axlib/VERSION)/
@@ -800,7 +800,7 @@ publish-rustdoc:
     - rm -rf /tmp/*
     # Set git config
     - rm -rf .git/config
-    - git config user.email "devops-team@parity.io"
+    - git config user.email "devops-team@axiacoin.network"
     - git config user.name "${GITHUB_USER}"
     - git config remote.origin.url "https://${GITHUB_TOKEN}@github.com/paritytech/${CI_PROJECT_NAME}.git"
     - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"

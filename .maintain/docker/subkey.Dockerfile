@@ -4,7 +4,7 @@ FROM docker.io/library/ubuntu:20.04
 ARG VCS_REF
 ARG BUILD_DATE
 
-LABEL io.parity.image.authors="devops-team@parity.io" \
+LABEL io.parity.image.authors="devops-team@axiacoin.network" \
 	io.parity.image.vendor="Parity Technologies" \
 	io.parity.image.title="parity/subkey" \
 	io.parity.image.description="Subkey: key generating utility for Axlib." \

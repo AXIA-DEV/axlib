@@ -151,7 +151,7 @@ the following:
 - This file configures several pallets to include in the runtime. Each pallet configuration is
   defined by a code block that begins with `impl $PALLET_NAME::Config for Runtime`.
 - The pallets are composed into a single runtime by way of the
-  [`construct_runtime!`](https://crates.parity.io/frame_support/macro.construct_runtime.html)
+  [`construct_runtime!`](https://crates.axiacoin.network/frame_support/macro.construct_runtime.html)
   macro, which is part of the core
   [FRAME Support](https://docs.axlib.io/v3/runtime/frame#support-crate)
   library.

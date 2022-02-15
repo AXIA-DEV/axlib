@@ -1,7 +1,7 @@
 [package]
 name = "sp-arithmetic"
 version = "4.0.0-dev"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Parity Technologies <admin@axiacoin.network>"]
 edition = "2018"
 license = "Apache-2.0"
 homepage = "https://axlib.io"

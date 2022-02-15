@@ -2,7 +2,7 @@
 name = "pallet-authorship"
 version = "4.0.0-dev"
 description = "Block and Uncle Author tracking for the FRAME"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Parity Technologies <admin@axiacoin.network>"]
 edition = "2018"
 license = "Apache-2.0"
 homepage = "https://axlib.io"

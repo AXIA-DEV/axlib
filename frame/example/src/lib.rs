@@ -685,7 +685,7 @@ impl<T: Config> Pallet<T> {
 // sender of the transaction (if signed) are also provided.
 //
 // The full list of hooks that can be added to a signed extension can be found
-// [here](https://crates.parity.io/sp_runtime/traits/trait.SignedExtension.html).
+// [here](https://crates.axiacoin.network/sp_runtime/traits/trait.SignedExtension.html).
 //
 // The signed extensions are aggregated in the runtime file of a axlib chain. All extensions
 // should be aggregated in a tuple and passed to the `CheckedExtrinsic` and `UncheckedExtrinsic`

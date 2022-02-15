@@ -528,7 +528,7 @@ Client
 * removes use of sc_client::Client from sc_network (#5147)
 * Use CLI to configure max instances cache (#5177)
 * client/service/src/builder.rs: Add build_info metric (#5192)
-* Remove axlib-ui.parity.io from CORS whitelist (#5142)
+* Remove axlib-ui.axiacoin.network from CORS whitelist (#5142)
 * removes use of sc_client::Client from sc-rpc (#5063)
 * Use 128mb for db cache default (#5134)
 * Drop db-cache default from 1gig to 32mb (#5128)

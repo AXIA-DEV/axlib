@@ -36,4 +36,4 @@ or an instance living in the
 
 
 ### [Here is link to barcamp presenation of simnet](https://www.crowdcast.io/e/ph49xu01)
-### [Here is link to the simnet repo, hosted on private gitlab](https://gitlab.parity.io/parity/simnet/-/tree/master)
+### [Here is link to the simnet repo, hosted on private gitlab](https://gitlab.axiacoin.network/parity/simnet/-/tree/master)

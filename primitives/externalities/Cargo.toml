@@ -2,7 +2,7 @@
 name = "sp-externalities"
 version = "0.10.0-dev"
 license = "Apache-2.0"
-authors = ["Parity Technologies <admin@parity.io>"]
+authors = ["Parity Technologies <admin@axiacoin.network>"]
 edition = "2018"
 homepage = "https://axlib.io"
 repository = "https://https://github.com/AXIA-DEV/axlib/"
