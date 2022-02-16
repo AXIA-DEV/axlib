@@ -451,11 +451,11 @@ dependencies = [
 name = "axlib-frame-rpc-support"
 version = "3.0.0"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "futures 0.3.16",
  "jsonrpc-client-transports",
- "axia-scale-codec",
  "sc-rpc-api",
  "scale-info",
  "serde",
@@ -467,6 +467,7 @@ dependencies = [
 name = "axlib-frame-rpc-system"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "frame-system-rpc-runtime-api",
  "futures 0.3.16",
@@ -474,7 +475,6 @@ dependencies = [
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "log 0.4.14",
- "axia-scale-codec",
  "sc-client-api",
  "sc-rpc-api",
  "sc-transaction-pool",
@@ -505,9 +505,9 @@ name = "axlib-test-client"
 version = "2.0.1"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "futures 0.3.16",
  "hex",
- "axia-scale-codec",
  "sc-client-api",
  "sc-client-db",
  "sc-consensus",
@@ -530,6 +530,7 @@ dependencies = [
 name = "axlib-test-runtime"
 version = "2.0.0"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "axlib-wasm-builder",
  "cfg-if 1.0.0",
@@ -541,7 +542,6 @@ dependencies = [
  "memory-db",
  "pallet-babe",
  "pallet-timestamp",
- "axia-scale-codec",
  "parity-util-mem",
  "sc-block-builder",
  "sc-executor",
@@ -576,10 +576,10 @@ dependencies = [
 name = "axlib-test-runtime-client"
 version = "2.0.0"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-client",
  "axlib-test-runtime",
  "futures 0.3.16",
- "axia-scale-codec",
  "sc-block-builder",
  "sc-client-api",
  "sc-consensus",
@@ -595,10 +595,10 @@ dependencies = [
 name = "axlib-test-runtime-transaction-pool"
 version = "2.0.0"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "derive_more",
  "futures 0.3.16",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "sc-transaction-pool",
  "sc-transaction-pool-api",
@@ -734,12 +734,12 @@ dependencies = [
 name = "beefy-gadget"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "beefy-primitives",
  "fnv",
  "futures 0.3.16",
  "log 0.4.14",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "sc-client-api",
  "sc-keystore",
@@ -793,8 +793,8 @@ dependencies = [
 name = "beefy-primitives"
 version = "4.0.0-dev"
 dependencies = [
- "hex-literal",
  "axia-scale-codec",
+ "hex-literal",
  "scale-info",
  "sp-api",
  "sp-application-crypto",
@@ -2108,7 +2108,7 @@ dependencies = [
  "futures-timer 3.0.2",
  "log 0.4.14",
  "num-traits",
- "axia-scale-codec",
+ "parity-scale-codec",
  "parking_lot 0.11.1",
  "rand 0.8.4",
  "scale-info",
@@ -2187,12 +2187,12 @@ dependencies = [
 name = "frame-benchmarking"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "hex-literal",
  "linregress",
  "log 0.4.14",
- "axia-scale-codec",
  "paste 1.0.4",
  "scale-info",
  "sp-api",
@@ -2208,13 +2208,13 @@ name = "frame-benchmarking-cli"
 version = "4.0.0-dev"
 dependencies = [
  "Inflector",
+ "axia-scale-codec",
  "chrono",
  "frame-benchmarking",
  "frame-support",
  "handlebars",
  "linked-hash-map",
  "log 0.4.14",
- "axia-scale-codec",
  "sc-cli",
  "sc-client-db",
  "sc-executor",
@@ -2232,9 +2232,9 @@ dependencies = [
 name = "frame-election-provider-support"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
- "axia-scale-codec",
  "scale-info",
  "sp-arithmetic",
  "sp-core",
@@ -2248,12 +2248,12 @@ dependencies = [
 name = "frame-executive"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "hex-literal",
  "pallet-balances",
  "pallet-transaction-payment",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-inherents",
@@ -2271,7 +2271,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "96616f82e069102b95a72c87de4c84d2f87ef7f0f20630e78ce3824436483110"
 dependencies = [
  "cfg-if 1.0.0",
- "axia-scale-codec",
+ "parity-scale-codec",
  "scale-info",
  "serde",
 ]
@@ -2281,6 +2281,7 @@ name = "frame-support"
 version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
+ "axia-scale-codec",
  "bitflags",
  "frame-metadata",
  "frame-support-procedural",
@@ -2288,7 +2289,6 @@ dependencies = [
  "impl-trait-for-tuples",
  "log 0.4.14",
  "once_cell",
- "axia-scale-codec",
  "parity-util-mem",
  "paste 1.0.4",
  "pretty_assertions",
@@ -2341,10 +2341,10 @@ dependencies = [
 name = "frame-support-test"
 version = "3.0.0"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-support-test-pallet",
  "frame-system",
- "axia-scale-codec",
  "pretty_assertions",
  "rustversion",
  "scale-info",
@@ -2363,9 +2363,9 @@ dependencies = [
 name = "frame-support-test-pallet"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
- "axia-scale-codec",
  "scale-info",
 ]
 
@@ -2373,11 +2373,11 @@ dependencies = [
 name = "frame-system"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "criterion",
  "frame-support",
  "log 0.4.14",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "sp-core",
@@ -2392,10 +2392,10 @@ dependencies = [
 name = "frame-system-benchmarking"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -3091,7 +3091,7 @@ version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "161ebdfec3c8e3b52bf61c4f3550a1eea4f9579d10dc1b936f3171ebdcd6c443"
 dependencies = [
- "axia-scale-codec",
+ "parity-scale-codec",
 ]
 
 [[package]]
@@ -4779,6 +4779,7 @@ dependencies = [
 name = "node-executor"
 version = "3.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "criterion",
  "frame-benchmarking",
  "frame-support",
@@ -4792,7 +4793,6 @@ dependencies = [
  "pallet-im-online",
  "pallet-timestamp",
  "pallet-treasury",
- "axia-scale-codec",
  "sc-executor",
  "scale-info",
  "sp-application-crypto",
@@ -4826,8 +4826,8 @@ dependencies = [
 name = "node-primitives"
 version = "2.0.0"
 dependencies = [
- "frame-system",
  "axia-scale-codec",
+ "frame-system",
  "scale-info",
  "sp-application-crypto",
  "sp-core",
@@ -5006,6 +5006,7 @@ dependencies = [
 name = "node-template-runtime"
 version = "3.0.0"
 dependencies = [
+ "axia-scale-codec",
  "axlib-wasm-builder",
  "frame-benchmarking",
  "frame-executive",
@@ -5023,7 +5024,6 @@ dependencies = [
  "pallet-timestamp",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
- "axia-scale-codec",
  "scale-info",
  "sp-api",
  "sp-block-builder",
@@ -5287,11 +5287,11 @@ dependencies = [
 name = "pallet-assets"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5303,10 +5303,10 @@ dependencies = [
 name = "pallet-atomic-swap"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5318,10 +5318,10 @@ dependencies = [
 name = "pallet-aura"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "pallet-timestamp",
- "axia-scale-codec",
  "scale-info",
  "sp-application-crypto",
  "sp-consensus-aura",
@@ -5335,10 +5335,10 @@ dependencies = [
 name = "pallet-authority-discovery"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "pallet-session",
- "axia-scale-codec",
  "scale-info",
  "sp-application-crypto",
  "sp-authority-discovery",
@@ -5352,10 +5352,10 @@ dependencies = [
 name = "pallet-authorship"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "impl-trait-for-tuples",
- "axia-scale-codec",
  "scale-info",
  "sp-authorship",
  "sp-core",
@@ -5368,6 +5368,7 @@ dependencies = [
 name = "pallet-babe"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-election-provider-support",
  "frame-support",
@@ -5380,7 +5381,6 @@ dependencies = [
  "pallet-staking",
  "pallet-staking-reward-curve",
  "pallet-timestamp",
- "axia-scale-codec",
  "scale-info",
  "sp-application-crypto",
  "sp-consensus-babe",
@@ -5397,13 +5397,13 @@ dependencies = [
 name = "pallet-bags-list"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-election-provider-support",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5416,12 +5416,12 @@ dependencies = [
 name = "pallet-balances"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-transaction-payment",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5433,11 +5433,11 @@ dependencies = [
 name = "pallet-beefy"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "beefy-primitives",
  "frame-support",
  "frame-system",
  "pallet-session",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "sp-core",
@@ -5451,6 +5451,7 @@ dependencies = [
 name = "pallet-beefy-mmr"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "beefy-merkle-tree",
  "beefy-primitives",
  "frame-support",
@@ -5463,7 +5464,6 @@ dependencies = [
  "pallet-mmr",
  "pallet-mmr-primitives",
  "pallet-session",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "sp-core",
@@ -5477,13 +5477,13 @@ dependencies = [
 name = "pallet-bounties"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-balances",
  "pallet-treasury",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5495,11 +5495,11 @@ dependencies = [
 name = "pallet-collective"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5512,6 +5512,7 @@ name = "pallet-contracts"
 version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
+ "axia-scale-codec",
  "bitflags",
  "frame-benchmarking",
  "frame-support",
@@ -5525,7 +5526,6 @@ dependencies = [
  "pallet-randomness-collective-flip",
  "pallet-timestamp",
  "pallet-utility",
- "axia-scale-codec",
  "pretty_assertions",
  "pwasm-utils",
  "rand 0.7.3",
@@ -5546,8 +5546,8 @@ dependencies = [
 name = "pallet-contracts-primitives"
 version = "4.0.0-dev"
 dependencies = [
- "bitflags",
  "axia-scale-codec",
+ "bitflags",
  "scale-info",
  "serde",
  "sp-core",
@@ -5568,12 +5568,12 @@ dependencies = [
 name = "pallet-contracts-rpc"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "pallet-contracts-primitives",
  "pallet-contracts-rpc-runtime-api",
- "axia-scale-codec",
  "serde",
  "serde_json",
  "sp-api",
@@ -5587,8 +5587,8 @@ dependencies = [
 name = "pallet-contracts-rpc-runtime-api"
 version = "4.0.0-dev"
 dependencies = [
- "pallet-contracts-primitives",
  "axia-scale-codec",
+ "pallet-contracts-primitives",
  "scale-info",
  "sp-api",
  "sp-runtime",
@@ -5599,12 +5599,12 @@ dependencies = [
 name = "pallet-democracy"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "pallet-balances",
  "pallet-scheduler",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "sp-core",
@@ -5617,13 +5617,13 @@ dependencies = [
 name = "pallet-election-provider-multi-phase"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-election-provider-support",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-balances",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "rand 0.7.3",
  "scale-info",
@@ -5643,10 +5643,10 @@ dependencies = [
 name = "pallet-elections"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5658,13 +5658,13 @@ dependencies = [
 name = "pallet-elections-phragmen"
 version = "5.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-utils",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5677,12 +5677,12 @@ dependencies = [
 name = "pallet-example"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5694,11 +5694,11 @@ dependencies = [
 name = "pallet-example-offchain-worker"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "lite-json",
  "log 0.4.14",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5711,9 +5711,9 @@ dependencies = [
 name = "pallet-example-parallel"
 version = "3.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5726,11 +5726,11 @@ dependencies = [
 name = "pallet-gilt"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-arithmetic",
  "sp-core",
@@ -5743,6 +5743,7 @@ dependencies = [
 name = "pallet-grandpa"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "finality-grandpa",
  "frame-benchmarking",
  "frame-election-provider-support",
@@ -5756,7 +5757,6 @@ dependencies = [
  "pallet-staking",
  "pallet-staking-reward-curve",
  "pallet-timestamp",
- "axia-scale-codec",
  "scale-info",
  "sp-application-crypto",
  "sp-core",
@@ -5773,12 +5773,12 @@ dependencies = [
 name = "pallet-identity"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "enumflags2",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5790,13 +5790,13 @@ dependencies = [
 name = "pallet-im-online"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-authorship",
  "pallet-session",
- "axia-scale-codec",
  "scale-info",
  "sp-application-crypto",
  "sp-core",
@@ -5810,11 +5810,11 @@ dependencies = [
 name = "pallet-indices"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5827,12 +5827,12 @@ dependencies = [
 name = "pallet-lottery"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-support-test",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5844,11 +5844,11 @@ dependencies = [
 name = "pallet-membership"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5860,6 +5860,7 @@ dependencies = [
 name = "pallet-mmr"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "ckb-merkle-mountain-range",
  "env_logger 0.9.0",
  "frame-benchmarking",
@@ -5867,7 +5868,6 @@ dependencies = [
  "frame-system",
  "hex-literal",
  "pallet-mmr-primitives",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5879,11 +5879,11 @@ dependencies = [
 name = "pallet-mmr-primitives"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "hex-literal",
  "log 0.4.14",
- "axia-scale-codec",
  "serde",
  "sp-api",
  "sp-core",
@@ -5895,11 +5895,11 @@ dependencies = [
 name = "pallet-mmr-rpc"
 version = "3.0.0"
 dependencies = [
+ "axia-scale-codec",
  "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "pallet-mmr-primitives",
- "axia-scale-codec",
  "serde",
  "serde_json",
  "sp-api",
@@ -5912,11 +5912,11 @@ dependencies = [
 name = "pallet-multisig"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5928,10 +5928,10 @@ dependencies = [
 name = "pallet-nicks"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5943,10 +5943,10 @@ dependencies = [
 name = "pallet-node-authorization"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "log 0.4.14",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -5958,11 +5958,11 @@ dependencies = [
 name = "pallet-offences"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "sp-core",
@@ -5976,6 +5976,7 @@ dependencies = [
 name = "pallet-offences-benchmarking"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-election-provider-support",
  "frame-support",
@@ -5989,7 +5990,6 @@ dependencies = [
  "pallet-staking",
  "pallet-staking-reward-curve",
  "pallet-timestamp",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6002,12 +6002,12 @@ dependencies = [
 name = "pallet-proxy"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "pallet-balances",
  "pallet-utility",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6019,9 +6019,9 @@ dependencies = [
 name = "pallet-randomness-collective-flip"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
- "axia-scale-codec",
  "safe-mix",
  "scale-info",
  "sp-core",
@@ -6034,10 +6034,10 @@ dependencies = [
 name = "pallet-recovery"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6049,12 +6049,12 @@ dependencies = [
 name = "pallet-scheduler"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-utils",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6066,10 +6066,10 @@ dependencies = [
 name = "pallet-scored-pool"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6081,12 +6081,12 @@ dependencies = [
 name = "pallet-session"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "impl-trait-for-tuples",
  "log 0.4.14",
  "pallet-timestamp",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6101,6 +6101,7 @@ dependencies = [
 name = "pallet-session-benchmarking"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-election-provider-support",
  "frame-support",
@@ -6110,7 +6111,6 @@ dependencies = [
  "pallet-staking",
  "pallet-staking-reward-curve",
  "pallet-timestamp",
- "axia-scale-codec",
  "rand 0.7.3",
  "scale-info",
  "sp-core",
@@ -6124,11 +6124,11 @@ dependencies = [
 name = "pallet-society"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-support-test",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "rand_chacha 0.2.2",
  "scale-info",
  "sp-core",
@@ -6141,6 +6141,7 @@ dependencies = [
 name = "pallet-staking"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-utils",
  "frame-benchmarking",
  "frame-election-provider-support",
@@ -6153,7 +6154,6 @@ dependencies = [
  "pallet-session",
  "pallet-staking-reward-curve",
  "pallet-timestamp",
- "axia-scale-codec",
  "rand_chacha 0.2.2",
  "scale-info",
  "serde",
@@ -6190,9 +6190,9 @@ dependencies = [
 name = "pallet-sudo"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6218,11 +6218,11 @@ dependencies = [
 name = "pallet-timestamp"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-inherents",
@@ -6236,13 +6236,13 @@ dependencies = [
 name = "pallet-tips"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-balances",
  "pallet-treasury",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "sp-core",
@@ -6256,10 +6256,10 @@ dependencies = [
 name = "pallet-transaction-payment"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "serde_json",
@@ -6274,11 +6274,11 @@ dependencies = [
 name = "pallet-transaction-payment-rpc"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "pallet-transaction-payment-rpc-runtime-api",
- "axia-scale-codec",
  "sp-api",
  "sp-blockchain",
  "sp-core",
@@ -6290,8 +6290,8 @@ dependencies = [
 name = "pallet-transaction-payment-rpc-runtime-api"
 version = "4.0.0-dev"
 dependencies = [
- "pallet-transaction-payment",
  "axia-scale-codec",
+ "pallet-transaction-payment",
  "sp-api",
  "sp-runtime",
 ]
@@ -6300,12 +6300,12 @@ dependencies = [
 name = "pallet-transaction-storage"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "hex-literal",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "sp-core",
@@ -6320,12 +6320,12 @@ dependencies = [
 name = "pallet-treasury"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "impl-trait-for-tuples",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "sp-core",
@@ -6338,11 +6338,11 @@ dependencies = [
 name = "pallet-uniques"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6354,11 +6354,11 @@ dependencies = [
 name = "pallet-utility"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6370,12 +6370,12 @@ dependencies = [
 name = "pallet-vesting"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
  "log 0.4.14",
  "pallet-balances",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-io",
@@ -6403,7 +6403,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "axia-scale-codec"
+name = "parity-scale-codec"
 version = "2.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "373b1a4c1338d9cd3d1fa53b3a11bdab5ab6bd80a20f7f7becd76953ae2be909"
@@ -6412,12 +6412,12 @@ dependencies = [
  "bitvec 0.20.2",
  "byte-slice-cast",
  "impl-trait-for-tuples",
- "axia-scale-codec-derive",
+ "parity-scale-codec-derive",
  "serde",
 ]
 
 [[package]]
-name = "axia-scale-codec-derive"
+name = "parity-scale-codec-derive"
 version = "2.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1557010476e0595c9b568d16dcfb81b93cdeb157612726f5170d31aa707bed27"
@@ -7447,12 +7447,12 @@ dependencies = [
 name = "remote-externalities"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "env_logger 0.9.0",
  "jsonrpsee-proc-macros",
  "jsonrpsee-ws-client",
  "log 0.4.14",
  "pallet-elections-phragmen",
- "axia-scale-codec",
  "serde",
  "serde_json",
  "sp-core",
@@ -7654,6 +7654,7 @@ name = "sc-authority-discovery"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime-client",
  "derive_more",
@@ -7662,7 +7663,6 @@ dependencies = [
  "ip_network",
  "libp2p",
  "log 0.4.14",
- "axia-scale-codec",
  "prost",
  "prost-build",
  "quickcheck",
@@ -7707,8 +7707,8 @@ dependencies = [
 name = "sc-block-builder"
 version = "0.10.0-dev"
 dependencies = [
- "axlib-test-runtime-client",
  "axia-scale-codec",
+ "axlib-test-runtime-client",
  "sc-client-api",
  "sp-api",
  "sp-block-builder",
@@ -7748,6 +7748,7 @@ dependencies = [
 name = "sc-cli"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "chrono",
  "fdlimit",
  "futures 0.3.16",
@@ -7755,7 +7756,6 @@ dependencies = [
  "libp2p",
  "log 0.4.14",
  "names",
- "axia-scale-codec",
  "rand 0.7.3",
  "regex",
  "rpassword",
@@ -7816,6 +7816,7 @@ dependencies = [
 name = "sc-client-db"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "hash-db",
  "kvdb",
@@ -7824,7 +7825,6 @@ dependencies = [
  "linked-hash-map",
  "log 0.4.14",
  "parity-db",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "quickcheck",
  "sc-client-api",
@@ -7869,13 +7869,13 @@ name = "sc-consensus-aura"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime-client",
  "derive_more",
  "futures 0.3.16",
  "getrandom 0.2.3",
  "log 0.4.14",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "sc-block-builder",
  "sc-client-api",
@@ -7907,6 +7907,7 @@ name = "sc-consensus-babe"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime-client",
  "derive_more",
@@ -7917,7 +7918,6 @@ dependencies = [
  "num-bigint",
  "num-rational 0.2.4",
  "num-traits",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "rand 0.7.3",
  "rand_chacha 0.2.2",
@@ -7985,8 +7985,8 @@ dependencies = [
 name = "sc-consensus-epochs"
 version = "0.10.0-dev"
 dependencies = [
- "fork-tree",
  "axia-scale-codec",
+ "fork-tree",
  "sc-client-api",
  "sc-consensus",
  "sp-blockchain",
@@ -7999,6 +7999,7 @@ version = "0.10.0-dev"
 dependencies = [
  "assert_matches",
  "async-trait",
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime-client",
  "axlib-test-runtime-transaction-pool",
@@ -8008,7 +8009,6 @@ dependencies = [
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "log 0.4.14",
- "axia-scale-codec",
  "sc-basic-authorship",
  "sc-client-api",
  "sc-consensus",
@@ -8035,12 +8035,12 @@ name = "sc-consensus-pow"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "derive_more",
  "futures 0.3.16",
  "futures-timer 3.0.2",
  "log 0.4.14",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "sc-client-api",
  "sc-consensus",
@@ -8059,11 +8059,11 @@ name = "sc-consensus-slots"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "futures 0.3.16",
  "futures-timer 3.0.2",
  "log 0.4.14",
- "axia-scale-codec",
  "sc-client-api",
  "sc-consensus",
  "sc-telemetry",
@@ -8094,12 +8094,12 @@ dependencies = [
 name = "sc-executor"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime",
  "hex-literal",
  "lazy_static",
  "libsecp256k1 0.6.0",
  "log 0.4.14",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "paste 1.0.4",
  "regex",
@@ -8131,9 +8131,9 @@ dependencies = [
 name = "sc-executor-common"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "derive_more",
  "environmental",
- "axia-scale-codec",
  "pwasm-utils",
  "sc-allocator",
  "sp-core",
@@ -8150,8 +8150,8 @@ dependencies = [
 name = "sc-executor-wasmi"
 version = "0.10.0-dev"
 dependencies = [
- "log 0.4.14",
  "axia-scale-codec",
+ "log 0.4.14",
  "sc-allocator",
  "sc-executor-common",
  "scoped-tls",
@@ -8165,10 +8165,10 @@ dependencies = [
 name = "sc-executor-wasmtime"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "cfg-if 1.0.0",
  "libc",
  "log 0.4.14",
- "axia-scale-codec",
  "parity-wasm 0.42.2",
  "sc-allocator",
  "sc-executor-common",
@@ -8187,6 +8187,7 @@ version = "0.10.0-dev"
 dependencies = [
  "assert_matches",
  "async-trait",
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime-client",
  "derive_more",
@@ -8196,7 +8197,6 @@ dependencies = [
  "futures 0.3.16",
  "futures-timer 3.0.2",
  "log 0.4.14",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "rand 0.8.4",
  "sc-block-builder",
@@ -8228,6 +8228,7 @@ dependencies = [
 name = "sc-finality-grandpa-rpc"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "derive_more",
  "finality-grandpa",
@@ -8237,7 +8238,6 @@ dependencies = [
  "jsonrpc-derive",
  "jsonrpc-pubsub",
  "log 0.4.14",
- "axia-scale-codec",
  "sc-block-builder",
  "sc-client-api",
  "sc-finality-grandpa",
@@ -8286,8 +8286,8 @@ dependencies = [
 name = "sc-light"
 version = "4.0.0-dev"
 dependencies = [
- "hash-db",
  "axia-scale-codec",
+ "hash-db",
  "parking_lot 0.11.1",
  "sc-client-api",
  "sc-executor",
@@ -8307,6 +8307,7 @@ dependencies = [
  "async-std",
  "async-trait",
  "asynchronous-codec 0.5.0",
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime",
  "axlib-test-runtime-client",
@@ -8326,7 +8327,6 @@ dependencies = [
  "linked_hash_set",
  "log 0.4.14",
  "lru",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "pin-project 1.0.8",
  "prost",
@@ -8405,6 +8405,7 @@ dependencies = [
 name = "sc-offchain"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "bytes 1.0.1",
  "fnv",
@@ -8416,7 +8417,6 @@ dependencies = [
  "lazy_static",
  "log 0.4.14",
  "num_cpus",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "rand 0.7.3",
  "sc-block-builder",
@@ -8462,6 +8462,7 @@ name = "sc-rpc"
 version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "futures 0.3.16",
  "hash-db",
@@ -8469,7 +8470,6 @@ dependencies = [
  "jsonrpc-pubsub",
  "lazy_static",
  "log 0.4.14",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "sc-block-builder",
  "sc-chain-spec",
@@ -8498,13 +8498,13 @@ dependencies = [
 name = "sc-rpc-api"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "futures 0.3.16",
  "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "jsonrpc-pubsub",
  "log 0.4.14",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "sc-chain-spec",
  "sc-transaction-pool-api",
@@ -8553,6 +8553,7 @@ version = "0.10.0-dev"
 dependencies = [
  "async-std",
  "async-trait",
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime",
  "axlib-test-runtime-client",
@@ -8564,7 +8565,6 @@ dependencies = [
  "jsonrpc-core",
  "jsonrpc-pubsub",
  "log 0.4.14",
- "axia-scale-codec",
  "parity-util-mem",
  "parking_lot 0.11.1",
  "pin-project 1.0.8",
@@ -8618,6 +8618,7 @@ dependencies = [
 name = "sc-service-test"
 version = "2.0.0"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime",
  "axlib-test-runtime-client",
  "fdlimit",
@@ -8625,7 +8626,6 @@ dependencies = [
  "hex",
  "hex-literal",
  "log 0.4.14",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "sc-block-builder",
  "sc-client-api",
@@ -8655,8 +8655,8 @@ dependencies = [
 name = "sc-state-db"
 version = "0.10.0-dev"
 dependencies = [
- "log 0.4.14",
  "axia-scale-codec",
+ "log 0.4.14",
  "parity-util-mem",
  "parity-util-mem-derive",
  "parking_lot 0.11.1",
@@ -8668,10 +8668,10 @@ dependencies = [
 name = "sc-sync-state-rpc"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
- "axia-scale-codec",
  "sc-chain-spec",
  "sc-client-api",
  "sc-consensus-babe",
@@ -8747,6 +8747,7 @@ name = "sc-transaction-pool"
 version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
+ "axia-scale-codec",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime",
  "axlib-test-runtime-client",
@@ -8757,7 +8758,6 @@ dependencies = [
  "intervalier",
  "linked-hash-map",
  "log 0.4.14",
- "axia-scale-codec",
  "parity-util-mem",
  "parking_lot 0.11.1",
  "retain_mut",
@@ -8808,7 +8808,7 @@ dependencies = [
  "bitvec 0.20.2",
  "cfg-if 1.0.0",
  "derive_more",
- "axia-scale-codec",
+ "parity-scale-codec",
  "scale-info-derive",
  "serde",
 ]
@@ -9221,9 +9221,9 @@ dependencies = [
 name = "sp-api"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "hash-db",
  "log 0.4.14",
- "axia-scale-codec",
  "sp-api-proc-macro",
  "sp-core",
  "sp-runtime",
@@ -9249,11 +9249,11 @@ dependencies = [
 name = "sp-api-test"
 version = "2.0.1"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "criterion",
  "futures 0.3.16",
  "log 0.4.14",
- "axia-scale-codec",
  "rustversion",
  "sc-block-builder",
  "sp-api",
@@ -9294,10 +9294,10 @@ dependencies = [
 name = "sp-arithmetic"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "criterion",
  "integer-sqrt",
  "num-traits",
- "axia-scale-codec",
  "primitive-types",
  "rand 0.7.3",
  "scale-info",
@@ -9355,10 +9355,10 @@ dependencies = [
 name = "sp-blockchain"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "futures 0.3.16",
  "log 0.4.14",
  "lru",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "sp-api",
  "sp-consensus",
@@ -9373,10 +9373,10 @@ name = "sp-consensus"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "futures 0.3.16",
  "futures-timer 3.0.2",
  "log 0.4.14",
- "axia-scale-codec",
  "sp-core",
  "sp-inherents",
  "sp-runtime",
@@ -9409,8 +9409,8 @@ name = "sp-consensus-babe"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
- "merlin",
  "axia-scale-codec",
+ "merlin",
  "scale-info",
  "serde",
  "sp-api",
@@ -9462,6 +9462,7 @@ dependencies = [
 name = "sp-core"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "base58",
  "blake2-rfc",
  "byteorder",
@@ -9479,7 +9480,6 @@ dependencies = [
  "log 0.4.14",
  "merlin",
  "num-traits",
- "axia-scale-codec",
  "parity-util-mem",
  "parking_lot 0.11.1",
  "primitive-types",
@@ -9528,8 +9528,8 @@ dependencies = [
 name = "sp-externalities"
 version = "0.10.0-dev"
 dependencies = [
- "environmental",
  "axia-scale-codec",
+ "environmental",
  "sp-std",
  "sp-storage",
 ]
@@ -9538,9 +9538,9 @@ dependencies = [
 name = "sp-finality-grandpa"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "finality-grandpa",
  "log 0.4.14",
- "axia-scale-codec",
  "scale-info",
  "serde",
  "sp-api",
@@ -9556,9 +9556,9 @@ name = "sp-inherents"
 version = "4.0.0-dev"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "futures 0.3.16",
  "impl-trait-for-tuples",
- "axia-scale-codec",
  "sp-core",
  "sp-runtime",
  "sp-std",
@@ -9569,11 +9569,11 @@ dependencies = [
 name = "sp-io"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "futures 0.3.16",
  "hash-db",
  "libsecp256k1 0.6.0",
  "log 0.4.14",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "sp-core",
  "sp-externalities",
@@ -9603,10 +9603,10 @@ name = "sp-keystore"
 version = "0.10.0-dev"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "derive_more",
  "futures 0.3.16",
  "merlin",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "rand 0.7.3",
  "rand_chacha 0.2.2",
@@ -9627,8 +9627,8 @@ dependencies = [
 name = "sp-npos-elections"
 version = "4.0.0-dev"
 dependencies = [
- "axlib-test-utils",
  "axia-scale-codec",
+ "axlib-test-utils",
  "rand 0.7.3",
  "scale-info",
  "serde",
@@ -9643,8 +9643,8 @@ dependencies = [
 name = "sp-npos-elections-fuzzer"
 version = "2.0.0-alpha.5"
 dependencies = [
- "honggfuzz",
  "axia-scale-codec",
+ "honggfuzz",
  "rand 0.7.3",
  "scale-info",
  "sp-npos-elections",
@@ -9697,12 +9697,12 @@ dependencies = [
 name = "sp-runtime"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "axlib-test-runtime-client",
  "either",
  "hash256-std-hasher",
  "impl-trait-for-tuples",
  "log 0.4.14",
- "axia-scale-codec",
  "parity-util-mem",
  "paste 1.0.4",
  "rand 0.7.3",
@@ -9723,8 +9723,8 @@ dependencies = [
 name = "sp-runtime-interface"
 version = "4.0.0-dev"
 dependencies = [
- "impl-trait-for-tuples",
  "axia-scale-codec",
+ "impl-trait-for-tuples",
  "primitive-types",
  "rustversion",
  "sp-core",
@@ -9795,8 +9795,8 @@ name = "sp-sandbox"
 version = "0.10.0-dev"
 dependencies = [
  "assert_matches",
- "log 0.4.14",
  "axia-scale-codec",
+ "log 0.4.14",
  "sp-core",
  "sp-io",
  "sp-std",
@@ -9840,11 +9840,11 @@ dependencies = [
 name = "sp-state-machine"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "hash-db",
  "hex-literal",
  "log 0.4.14",
  "num-traits",
- "axia-scale-codec",
  "parking_lot 0.11.1",
  "pretty_assertions",
  "rand 0.7.3",
@@ -9869,8 +9869,8 @@ version = "4.0.0-dev"
 name = "sp-storage"
 version = "4.0.0-dev"
 dependencies = [
- "impl-serde",
  "axia-scale-codec",
+ "impl-serde",
  "ref-cast",
  "serde",
  "sp-debug-derive",
@@ -9881,8 +9881,8 @@ dependencies = [
 name = "sp-tasks"
 version = "4.0.0-dev"
 dependencies = [
- "log 0.4.14",
  "axia-scale-codec",
+ "log 0.4.14",
  "sp-core",
  "sp-externalities",
  "sp-io",
@@ -9907,9 +9907,9 @@ name = "sp-timestamp"
 version = "4.0.0-dev"
 dependencies = [
  "async-trait",
+ "axia-scale-codec",
  "futures-timer 3.0.2",
  "log 0.4.14",
- "axia-scale-codec",
  "sp-api",
  "sp-inherents",
  "sp-runtime",
@@ -9941,8 +9941,8 @@ name = "sp-transaction-storage-proof"
 version = "4.0.0-dev"
 dependencies = [
  "async-trait",
- "log 0.4.14",
  "axia-scale-codec",
+ "log 0.4.14",
  "scale-info",
  "sp-core",
  "sp-inherents",
@@ -9955,11 +9955,11 @@ dependencies = [
 name = "sp-trie"
 version = "4.0.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "criterion",
  "hash-db",
  "hex-literal",
  "memory-db",
- "axia-scale-codec",
  "scale-info",
  "sp-core",
  "sp-runtime",
@@ -9974,8 +9974,8 @@ dependencies = [
 name = "sp-version"
 version = "4.0.0-dev"
 dependencies = [
- "impl-serde",
  "axia-scale-codec",
+ "impl-serde",
  "parity-wasm 0.42.2",
  "scale-info",
  "serde",
@@ -10000,8 +10000,8 @@ dependencies = [
 name = "sp-wasm-interface"
 version = "4.0.0-dev"
 dependencies = [
- "impl-trait-for-tuples",
  "axia-scale-codec",
+ "impl-trait-for-tuples",
  "sp-std",
  "wasmi",
 ]
@@ -10694,7 +10694,7 @@ dependencies = [
  "hash-db",
  "keccak-hasher",
  "memory-db",
- "axia-scale-codec",
+ "parity-scale-codec",
  "trie-db",
  "trie-root",
  "trie-standardmap",
@@ -10785,9 +10785,9 @@ checksum = "59547bce71d9c38b83d9c0e92b6066c4253371f15005def0c30d9657f50c7642"
 name = "try-runtime-cli"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-scale-codec",
  "jsonrpsee-ws-client",
  "log 0.4.14",
- "axia-scale-codec",
  "remote-externalities",
  "sc-chain-spec",
  "sc-cli",
