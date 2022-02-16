@@ -16,7 +16,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 serde = { version = "1.0.126", optional = true, features = ["derive"] }
 codec = { git = "https://github.com/axia-tech/axia-scale-codec", branch = "v2.3.1", package = "axia-scale-codec", version = "2.3.1", default-features = false, features = ["derive", "max-encoded-len"] }
 scale-info = { git = "https://github.com/axia-tech/scale-info", branch = "v1.0.0", version = "1.0.0", default-features = false, features = ["derive"] }
-frame-metadata = { version = "14.0.0", default-features = false, features = ["v14"] }
+frame-metadata = { git = "https://github.com/axia-tech/frame-metadata", branch = "v14.2.0", version = "14.2.0", default-features = false, features = ["v14"] }
 sp-std = { version = "4.0.0-dev", default-features = false, path = "../../primitives/std" }
 sp-io = { version = "4.0.0-dev", default-features = false, path = "../../primitives/io" }
 sp-runtime = { version = "4.0.0-dev", default-features = false, path = "../../primitives/runtime" }
