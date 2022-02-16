@@ -456,6 +456,7 @@ dependencies = [
  "axia-util-mem-derive 0.1.0 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "cfg-if 1.0.0",
  "impl-trait-for-tuples",
+ "parking_lot 0.11.2",
  "primitive-types 0.10.1 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "winapi 0.3.9",
 ]
@@ -596,6 +597,7 @@ name = "axlib-test-runtime"
 version = "2.0.0"
 dependencies = [
  "axia-scale-codec",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "axlib-test-runtime-client",
  "axlib-wasm-builder",
  "cfg-if 1.0.0",
@@ -604,10 +606,9 @@ dependencies = [
  "frame-system-rpc-runtime-api",
  "futures 0.3.21",
  "log 0.4.14",
- "memory-db 0.27.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "memory-db",
  "pallet-babe",
  "pallet-timestamp",
- "parity-util-mem",
  "sc-block-builder",
  "sc-executor",
  "sc-service",
@@ -2156,15 +2157,6 @@ dependencies = [
 [[package]]
 name = "fixed-hash"
 version = "0.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cfcf0ed7fe52a17a03854ec54a9f76d6d84508d1c0e66bc1793301c73fc8493c"
-dependencies = [
- "static_assertions",
-]
-
-[[package]]
-name = "fixed-hash"
-version = "0.7.0"
 source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
  "static_assertions",
@@ -2336,6 +2328,7 @@ version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
  "axia-scale-codec",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "bitflags",
  "frame-metadata",
  "frame-support-procedural",
@@ -2343,7 +2336,6 @@ dependencies = [
  "impl-trait-for-tuples",
  "log 0.4.14",
  "once_cell",
- "parity-util-mem",
  "paste 1.0.6",
  "pretty_assertions",
  "scale-info",
@@ -3527,12 +3519,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "kvdb"
+version = "0.10.0"
+source = "git+https://github.com/axia-tech/axia-common#22e9ba1e4f54890265f7405727857a02dd4846b3"
+dependencies = [
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common)",
+ "smallvec 1.8.0",
+]
+
+[[package]]
 name = "kvdb-memorydb"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c3b6b85fc643f5acd0bffb2cc8a6d150209379267af0d41db72170021841f9f5"
 dependencies = [
- "kvdb",
+ "kvdb 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-util-mem",
  "parking_lot 0.11.2",
 ]
@@ -3544,7 +3545,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b1b6ea8f2536f504b645ad78419c8246550e19d2c3419a167080ce08edee35a"
 dependencies = [
  "fs-swap",
- "kvdb",
+ "kvdb 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.14",
  "num_cpus",
  "owning_ref",
@@ -4419,17 +4420,6 @@ dependencies = [
 [[package]]
 name = "memory-db"
 version = "0.27.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de006e09d04fc301a5f7e817b75aa49801c4479a8af753764416b085337ddcc5"
-dependencies = [
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "hashbrown",
- "parity-util-mem",
-]
-
-[[package]]
-name = "memory-db"
-version = "0.27.0"
 source = "git+https://github.com/axia-tech/trie?branch=master#ee16fe53f6bfc3cfba00fa80fcea6998244c7eb2"
 dependencies = [
  "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common)",
@@ -4754,7 +4744,7 @@ dependencies = [
  "futures 0.3.21",
  "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hex",
- "kvdb",
+ "kvdb 0.10.0 (git+https://github.com/axia-tech/axia-common)",
  "kvdb-rocksdb",
  "lazy_static",
  "log 0.4.14",
@@ -6501,11 +6491,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6f4cb4e169446179cbc6b8b6320cc9fca49bd2e94e8db25f25f200a8ea774770"
 dependencies = [
  "cfg-if 1.0.0",
- "hashbrown",
  "impl-trait-for-tuples",
  "parity-util-mem-derive",
  "parking_lot 0.11.2",
- "primitive-types 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "smallvec 1.8.0",
  "winapi 0.3.9",
 ]
@@ -6902,16 +6890,6 @@ dependencies = [
  "ctor",
  "diff",
  "output_vt100",
-]
-
-[[package]]
-name = "primitive-types"
-version = "0.10.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "05e4722c697a58a99d5d06a08c30821d7c082a4632198de1eaa5a6c22ef42373"
-dependencies = [
- "fixed-hash 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "uint 0.9.3",
 ]
 
 [[package]]
@@ -7844,7 +7822,7 @@ dependencies = [
  "axia-scale-codec",
  "axlib-test-runtime-client",
  "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "kvdb",
+ "kvdb 0.10.0 (git+https://github.com/axia-tech/axia-common)",
  "kvdb-memorydb",
  "kvdb-rocksdb",
  "linked-hash-map",
@@ -8280,10 +8258,10 @@ name = "sc-informant"
 version = "0.10.0-dev"
 dependencies = [
  "ansi_term",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "futures 0.3.21",
  "futures-timer 3.0.2",
  "log 0.4.14",
- "parity-util-mem",
  "sc-client-api",
  "sc-network",
  "sc-transaction-pool-api",
@@ -8578,6 +8556,7 @@ dependencies = [
  "async-std",
  "async-trait",
  "axia-scale-codec",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime",
  "axlib-test-runtime-client",
@@ -8589,7 +8568,6 @@ dependencies = [
  "jsonrpc-core",
  "jsonrpc-pubsub",
  "log 0.4.14",
- "parity-util-mem",
  "parking_lot 0.11.2",
  "pin-project 1.0.10",
  "rand 0.7.3",
@@ -8680,8 +8658,8 @@ name = "sc-state-db"
 version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "log 0.4.14",
- "parity-util-mem",
  "parity-util-mem-derive",
  "parking_lot 0.11.2",
  "sc-client-api",
@@ -8772,6 +8750,7 @@ version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
  "axia-scale-codec",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "axlib-prometheus-endpoint",
  "axlib-test-runtime",
  "axlib-test-runtime-client",
@@ -8782,7 +8761,6 @@ dependencies = [
  "intervalier",
  "linked-hash-map",
  "log 0.4.14",
- "parity-util-mem",
  "parking_lot 0.11.2",
  "retain_mut",
  "sc-block-builder",
@@ -9500,6 +9478,7 @@ name = "sp-core"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "base58",
  "blake2-rfc",
  "byteorder",
@@ -9517,7 +9496,6 @@ dependencies = [
  "log 0.4.14",
  "merlin",
  "num-traits",
- "parity-util-mem",
  "parking_lot 0.11.2",
  "primitive-types 0.10.1 (git+https://github.com/axia-tech/axia-common)",
  "rand 0.7.3",
@@ -9548,7 +9526,7 @@ dependencies = [
 name = "sp-database"
 version = "4.0.0-dev"
 dependencies = [
- "kvdb",
+ "kvdb 0.10.0 (git+https://github.com/axia-tech/axia-common)",
  "parking_lot 0.11.2",
 ]
 
@@ -9735,12 +9713,12 @@ name = "sp-runtime"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "axlib-test-runtime-client",
  "either",
  "hash256-std-hasher 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "impl-trait-for-tuples",
  "log 0.4.14",
- "parity-util-mem",
  "paste 1.0.6",
  "rand 0.7.3",
  "scale-info",
@@ -9932,7 +9910,7 @@ name = "sp-test-primitives"
 version = "2.0.0"
 dependencies = [
  "axia-scale-codec",
- "parity-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "serde",
  "sp-application-crypto",
  "sp-core",
@@ -9996,7 +9974,7 @@ dependencies = [
  "criterion",
  "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hex-literal",
- "memory-db 0.27.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "memory-db",
  "scale-info",
  "sp-core",
  "sp-runtime",
@@ -10719,7 +10697,7 @@ dependencies = [
  "criterion",
  "hash-db 0.15.2 (git+https://github.com/axia-tech/trie?branch=master)",
  "keccak-hasher 0.15.3 (git+https://github.com/axia-tech/trie?branch=master)",
- "memory-db 0.27.0 (git+https://github.com/axia-tech/trie?branch=master)",
+ "memory-db",
  "trie-db 0.22.6 (git+https://github.com/axia-tech/trie?branch=master)",
  "trie-root 0.16.0 (git+https://github.com/axia-tech/trie?branch=master)",
  "trie-standardmap 0.15.2 (git+https://github.com/axia-tech/trie?branch=master)",

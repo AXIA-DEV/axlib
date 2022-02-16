@@ -54,7 +54,7 @@ std = [
 	"sp-std/std",
 	"sp-io/std",
 	"serde",
-	"parity-util-mem/std",
+	"axia-util-mem/std",
 	"hash256-std-hasher/std",
 	"either/use_std",
 ]
