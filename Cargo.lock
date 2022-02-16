@@ -407,6 +407,24 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
+name = "axia-db"
+version = "0.3.2"
+source = "git+https://github.com/axia-tech/axia-db?branch=v0.3.2#a3a9e017317557217cd69daabeb0ea1665fa8688"
+dependencies = [
+ "blake2-rfc",
+ "crc32fast",
+ "fs2",
+ "hex",
+ "libc",
+ "log 0.4.14",
+ "lz4",
+ "memmap2 0.2.3",
+ "parking_lot 0.11.2",
+ "rand 0.8.5",
+ "snap",
+]
+
+[[package]]
 name = "axia-scale-codec"
 version = "2.3.1"
 source = "git+https://github.com/axia-tech/axia-scale-codec?branch=v2.3.1#bc2cdde93e738d57df30daac985160ca387030c2"
@@ -433,14 +451,36 @@ dependencies = [
 [[package]]
 name = "axia-util-mem"
 version = "0.10.2"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
+dependencies = [
+ "axia-util-mem-derive 0.1.0 (git+https://github.com/axia-tech/axia-common?branch=master)",
+ "cfg-if 1.0.0",
+ "impl-trait-for-tuples",
+ "primitive-types 0.10.1 (git+https://github.com/axia-tech/axia-common?branch=master)",
+ "winapi 0.3.9",
+]
+
+[[package]]
+name = "axia-util-mem"
+version = "0.10.2"
 source = "git+https://github.com/axia-tech/axia-common#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
- "axia-util-mem-derive",
+ "axia-util-mem-derive 0.1.0 (git+https://github.com/axia-tech/axia-common)",
  "cfg-if 1.0.0",
  "hashbrown",
  "impl-trait-for-tuples",
  "parking_lot 0.11.2",
  "winapi 0.3.9",
+]
+
+[[package]]
+name = "axia-util-mem-derive"
+version = "0.1.0"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
+dependencies = [
+ "proc-macro2",
+ "syn",
+ "synstructure",
 ]
 
 [[package]]
@@ -2118,6 +2158,14 @@ name = "fixed-hash"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cfcf0ed7fe52a17a03854ec54a9f76d6d84508d1c0e66bc1793301c73fc8493c"
+dependencies = [
+ "static_assertions",
+]
+
+[[package]]
+name = "fixed-hash"
+version = "0.7.0"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
  "static_assertions",
 ]
@@ -4384,7 +4432,7 @@ name = "memory-db"
 version = "0.27.0"
 source = "git+https://github.com/axia-tech/trie?branch=master#ee16fe53f6bfc3cfba00fa80fcea6998244c7eb2"
 dependencies = [
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common)",
  "hash-db 0.15.2 (git+https://github.com/axia-tech/trie?branch=master)",
  "hashbrown",
 ]
@@ -4699,6 +4747,8 @@ dependencies = [
 name = "node-bench"
 version = "0.9.0-dev"
 dependencies = [
+ "axia-db",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "derive_more",
  "fs_extra",
  "futures 0.3.21",
@@ -4711,8 +4761,6 @@ dependencies = [
  "node-primitives",
  "node-runtime",
  "node-testing",
- "parity-db",
- "parity-util-mem",
  "rand 0.7.3",
  "sc-basic-authorship",
  "sc-client-api",
@@ -6427,25 +6475,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "parity-db"
-version = "0.3.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "68de01cff53da5574397233383dd7f5c15ee958c348245765ea8cb09f2571e6b"
-dependencies = [
- "blake2-rfc",
- "crc32fast",
- "fs2",
- "hex",
- "libc",
- "log 0.4.14",
- "lz4",
- "memmap2 0.2.3",
- "parking_lot 0.11.2",
- "rand 0.8.5",
- "snap",
-]
-
-[[package]]
 name = "parity-send-wrapper"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6888,13 +6917,22 @@ dependencies = [
 [[package]]
 name = "primitive-types"
 version = "0.10.1"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
+dependencies = [
+ "fixed-hash 0.7.0 (git+https://github.com/axia-tech/axia-common?branch=master)",
+ "uint 0.9.1 (git+https://github.com/axia-tech/axia-common?branch=master)",
+]
+
+[[package]]
+name = "primitive-types"
+version = "0.10.1"
 source = "git+https://github.com/axia-tech/axia-common#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
  "fixed-hash 0.7.0 (git+https://github.com/axia-tech/axia-common)",
  "impl-codec",
  "impl-serde 0.3.2 (git+https://github.com/axia-tech/axia-common)",
  "scale-info",
- "uint 0.9.1",
+ "uint 0.9.1 (git+https://github.com/axia-tech/axia-common)",
 ]
 
 [[package]]
@@ -7802,6 +7840,7 @@ dependencies = [
 name = "sc-client-db"
 version = "0.10.0-dev"
 dependencies = [
+ "axia-db",
  "axia-scale-codec",
  "axlib-test-runtime-client",
  "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -7810,7 +7849,6 @@ dependencies = [
  "kvdb-rocksdb",
  "linked-hash-map",
  "log 0.4.14",
- "parity-db",
  "parking_lot 0.11.2",
  "quickcheck",
  "sc-client-api",
@@ -10863,6 +10901,17 @@ name = "ucd-trie"
 version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56dee185309b50d1f11bfedef0fe6d036842e3fb77413abef29f8f8d1c5d4c1c"
+
+[[package]]
+name = "uint"
+version = "0.9.1"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
+dependencies = [
+ "byteorder",
+ "crunchy",
+ "hex",
+ "static_assertions",
+]
 
 [[package]]
 name = "uint"

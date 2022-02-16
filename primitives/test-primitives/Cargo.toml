@@ -17,7 +17,7 @@ codec = { git = "https://github.com/axia-tech/axia-scale-codec", branch = "v2.3.
 sp-core = { version = "4.0.0-dev", default-features = false, path = "../core" }
 serde = { version = "1.0.126", optional = true, features = ["derive"] }
 sp-runtime = { version = "4.0.0-dev", default-features = false, path = "../runtime" }
-parity-util-mem = { version = "0.10.0", default-features = false, features = ["primitive-types"] }
+axia-util-mem = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.10.0", default-features = false, features = ["primitive-types"] }
 
 [features]
 default = [

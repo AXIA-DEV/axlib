@@ -36,7 +36,7 @@ use sp_trie::DBValue;
 /// Otherwise RocksDb will fail to open database && check its type.
 #[cfg(any(
 	feature = "with-kvdb-rocksdb",
-	feature = "with-parity-db",
+	feature = "with-axia-db",
 	feature = "test-helpers",
 	test
 ))]
@@ -280,7 +280,7 @@ impl From<OpenDbError> for sp_blockchain::Error {
 	}
 }
 
-#[cfg(feature = "with-parity-db")]
+#[cfg(feature = "with-axia-db")]
 impl From<parity_db::Error> for OpenDbError {
 	fn from(err: parity_db::Error) -> Self {
 		if err.to_string().contains("use open_or_create") {
@@ -301,19 +301,19 @@ impl From<io::Error> for OpenDbError {
 	}
 }
 
-#[cfg(feature = "with-parity-db")]
+#[cfg(feature = "with-axia-db")]
 fn open_parity_db<Block: BlockT>(path: &Path, db_type: DatabaseType, create: bool) -> OpenDbResult {
 	let db = crate::parity_db::open(path, db_type, create)?;
 	Ok(db)
 }
 
-#[cfg(not(feature = "with-parity-db"))]
+#[cfg(not(feature = "with-axia-db"))]
 fn open_parity_db<Block: BlockT>(
 	_path: &Path,
 	_db_type: DatabaseType,
 	_create: bool,
 ) -> OpenDbResult {
-	Err(OpenDbError::NotEnabled("with-parity-db"))
+	Err(OpenDbError::NotEnabled("with-axia-db"))
 }
 
 #[cfg(any(feature = "with-kvdb-rocksdb", test))]
@@ -680,13 +680,13 @@ mod tests {
 			"db_version",
 		);
 
-		#[cfg(feature = "with-parity-db")]
+		#[cfg(feature = "with-axia-db")]
 		check_dir_for_db_type(
 			DatabaseType::Light,
 			DatabaseSource::ParityDb { path: PathBuf::new() },
 			"metadata",
 		);
-		#[cfg(feature = "with-parity-db")]
+		#[cfg(feature = "with-axia-db")]
 		check_dir_for_db_type(
 			DatabaseType::Full,
 			DatabaseSource::ParityDb { path: PathBuf::new() },
@@ -770,7 +770,7 @@ mod tests {
 		}
 	}
 
-	#[cfg(feature = "with-parity-db")]
+	#[cfg(feature = "with-axia-db")]
 	#[cfg(any(feature = "with-kvdb-rocksdb", test))]
 	#[test]
 	fn test_open_database_auto_new() {
@@ -812,7 +812,7 @@ mod tests {
 		}
 	}
 
-	#[cfg(feature = "with-parity-db")]
+	#[cfg(feature = "with-axia-db")]
 	#[cfg(any(feature = "with-kvdb-rocksdb", test))]
 	#[test]
 	fn test_open_database_rocksdb_new() {
@@ -856,7 +856,7 @@ mod tests {
 		}
 	}
 
-	#[cfg(feature = "with-parity-db")]
+	#[cfg(feature = "with-axia-db")]
 	#[cfg(any(feature = "with-kvdb-rocksdb", test))]
 	#[test]
 	fn test_open_database_paritydb_new() {

@@ -35,4 +35,4 @@ log = "0.4.8"
 
 [features]
 default = ["db"]
-db = ["sc-client-db/with-kvdb-rocksdb", "sc-client-db/with-parity-db"]
+db = ["sc-client-db/with-kvdb-rocksdb", "sc-client-db/with-axia-db"]
