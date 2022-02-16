@@ -18,7 +18,7 @@ codec = { git = "https://github.com/axia-tech/axia-scale-codec", branch = "v2.3.
 	"derive",
 	"max-encoded-len",
 ] }
-scale-info = { version = "1.0", default-features = false, features = ["derive"] }
+scale-info = { git = "https://github.com/axia-tech/scale-info", branch = "v1.0.0", version = "1.0.0", default-features = false, features = ["derive"] }
 log = { version = "0.4", default-features = false }
 pwasm-utils = { version = "0.18.2", default-features = false }
 serde = { version = "1", optional = true, features = ["derive"] }
